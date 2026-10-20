@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <!--
+        Auteur : Dr. Oussama Ben Khiroun
+        Github : https://github.com/oussbenk
+        Date : 2026-10-17
+        Description : Site de vente en ligne avec choix de thème
+    -->
+    <head>
+        <title>Site de vente en ligne avec choix de thème</title>
+        <meta charset="UTF-8">
+        
+        <!-- Feuille de style active -->
+		<link id="theme-stylesheet" rel="stylesheet" href="css/style1.css"/>
+        <style>
+            /* Styles pour la barre du sélecteur de thème (NOT IMPORTANT TO READ) */
+            #theme-chooser-header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color: #ffaa00;
+                border: #553902 2px outset;
+                font-size: large;
+                font-family: Arial, Helvetica, sans-serif;
+                padding: 10px;
+                z-index: 1000;
+            }
+            #style-selector {
+                font-size: large;
+                padding: 5px 10px;
+            }
+            #note-ai {
+                font-size: small;
+                color: #333;
+                display: none;
+                margin-left: 20px;
+            }
+            #note-ai .ai-version {
+                font-weight: bold;
+                background-color: #f7e7d3;
+                border-radius: 20px;
+                margin-left: 5px;
+                padding: 5px 10px;
+            }
+        </style>
+	</head>
+    <body>
+        <!-- Choix du thème -->
+        <div id="theme-chooser-header">
+            <label for="style-selector"><b>🪄 Choisir une feuille de style :</b></label>
+            <select id="style-selector">
+                <option value="css/style1.css" selected>Style 1</option>
+                <option value="css/style2.css">Style 2</option>
+                <option value="css/style3.css">Style 3</option>
+                <option value="css/style4.css">Style 4 (with AI ✨)</option>
+            </select>
+            <span id="note-ai">* Le style 4 est généré par l'IA <span class="ai-version">Gemini 3.8 Flash</span></span>
+        </div>
+
+        <!-- Contenu de la page -->
+        <div id="page">
+            <header>
+                <div id="logo">
+                    <a href="#" title="Retourner à la page d'accueil"><img src="img/logo_shop.png" alt="Logo du site MyShop"/></a>                    
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Accueil</a></li>
+                        <li><a href="#">Panier</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div id="center">
+                <aside>
+                    Ici la <b>sidebar</b>, vous pouvez mettre un menu secondaire de navigation ou une publicité
+                </aside>
+                <main>
+                    <div class="product">
+                        <h3 class="title">Produit 1</h3>
+                        <img src="img/img1.png" alt="Image du produit 1"/>
+                        <p class="desc">Decription du produit ici. Nulla facilisi. Morbi rutrum, enim at posuere elementum, tortor quam posuere erat, vel rhoncus urna orci nec diam.</p>
+                        <p><b>Prix : </b><span class="price">100</span> dt</p>
+                        <a href="#" title="Cliquer ici pour ajouter le produit au panier">Ajouter au panier</a>
+                    </div>
+                    <div class="product">
+                        <h3 class="title">Produit 2</h3>
+                        <img src="img/img2.png" alt="Image du produit 2"/>
+                        <p class="desc">Decription du produit ici. Nulla facilisi. Morbi rutrum, enim at posuere elementum, tortor quam posuere erat, vel rhoncus urna orci nec diam.</p>
+                        <p><b>Prix : </b><span class="price">200</span> dt</p>
+                        <a href="#" title="Cliquer ici pour ajouter le produit au panier">Ajouter au panier</a>
+                    </div>
+                    <div class="product">
+                        <h3 class="title">Produit 3</h3>
+                        <img src="img/img3.png" alt="Image du produit 3"/>
+                        <p class="desc">Decription du produit ici. Nulla facilisi. Morbi rutrum, enim at posuere elementum, tortor quam posuere erat, vel rhoncus urna orci nec diam.</p>
+                        <p><b>Prix : </b><span class="price">300</span> dt</p>
+                        <a href="#" title="Cliquer ici pour ajouter le produit au panier">Ajouter au panier</a>
+                    </div>
+                    <div class="product">
+                        <h3 class="title">Produit 4</h3>
+                        <img src="img/img4.png" alt="Image du produit 4"/>
+                        <p class="desc">Decription du produit ici. Nulla facilisi. Morbi rutrum, enim at posuere elementum, tortor quam posuere erat, vel rhoncus urna orci nec diam.</p>
+                        <p><b>Prix : </b><span class="price">400</span> dt</p>
+                        <a href="#" title="Cliquer ici pour ajouter le produit au panier">Ajouter au panier</a>
+                    </div>
+                    <div class="product">
+                        <h3 class="title">Produit 5</h3>
+                        <img src="img/img5.png" alt="Image du produit 5"/>
+                        <p class="desc">Decription du produit ici. Nulla facilisi. Morbi rutrum, enim at posuere elementum, tortor quam posuere erat, vel rhoncus urna orci nec diam.</p>
+                        <p><b>Prix : </b><span class="price">500</span> dt</p>
+                        <a href="#" title="Cliquer ici pour ajouter le produit au panier">Ajouter au panier</a>
+                    </div>                    
+                </main>
+            </div>
+            <footer>
+                Copyright &COPY; Author : <a href="https://github.com/oussbenk">Oussama Ben Khiroun</a>
+            </footer>
+        </div>
+        <!-- Fin du contenu -->
+
+        <!-- Script pour changer la feuille de style -->
+        <script>
+            const styleSelector = document.getElementById("style-selector");
+            const themeStylesheet = document.getElementById("theme-stylesheet");
+            const noteAI = document.getElementById("note-ai");
+
+            styleSelector.addEventListener("change", function () {
+                themeStylesheet.href = styleSelector.value;
+                noteAI.style.display = styleSelector.value === "css/style4.css" ? "inline" : "none";
+            });
+        </script>
+    </body>
+</html>
